@@ -1,0 +1,21 @@
+{
+  "name": "@workspace/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx ./src/hello.ts",
+    "build:features-pdf": "tsx ./src/build-features-pdf.tsx",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.5.1",
+    "jszip": "^3.10.1",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

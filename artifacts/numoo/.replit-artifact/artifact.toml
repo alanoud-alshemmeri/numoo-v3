@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "نمو — Numoo"
+version = "1.0.0"
+id = "artifacts/numoo"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25031
+
+[services.development]
+run = "pnpm --filter @workspace/numoo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/numoo", "run", "build" ]
+publicDir = "artifacts/numoo/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25031"
+BASE_PATH = "/"
